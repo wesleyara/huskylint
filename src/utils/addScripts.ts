@@ -12,7 +12,7 @@ export const addScripts = async (
 
   if (isRequiredCommitlint) {
     exec(
-      'npx husky add .husky/pre-commit "npx --no -- commitlint --edit ${1}"',
+      'npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"',
     );
 
     writeFileSync(
