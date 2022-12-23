@@ -1,6 +1,6 @@
 {
   "name": "huskylint",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Executable to configure husky, lint staged and commitlint.",
   "bin": "lib/script.js",
   "scripts": {
