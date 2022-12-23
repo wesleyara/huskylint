@@ -1,10 +1,14 @@
-import { writeFileSync } from "fs";
+import { existsSync, writeFileSync } from "fs";
 import { exec } from "shelljs";
 
 export const addScripts = async (
   isRequiredCommitlint: boolean,
   managerCommand: string,
 ) => {
+  if (!existsSync(".git")) {
+    exec("git init");
+  }
+
   exec(`npm pkg set scripts.prepare="husky install"`);
   exec(`${managerCommand} prepare`);
 
