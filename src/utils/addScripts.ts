@@ -21,7 +21,7 @@ export const addScripts = async (
 
     writeFileSync(
       "commitlint.config.js",
-      `module.exports = {extends: ["@commitlint/config-conventional"]};\r\n`,
+      `module.exports = { extends: ["@commitlint/config-conventional"] };\r\n`,
     );
   }
 };

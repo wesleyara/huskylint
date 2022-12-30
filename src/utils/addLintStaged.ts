@@ -7,8 +7,8 @@ export const addLintStaged = async () => {
 
   packageJson["lint-staged"] = {
     "src/**/*.{js,ts,jsx,tsx}": [
-      "prettier --write .",
-      "eslint --ext js,ts . --fix",
+      "prettier --write src",
+      "eslint --ext js,ts,jsx,tsx src --fix",
     ],
   };
 
