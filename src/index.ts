@@ -5,6 +5,7 @@ import {
   addDependencies,
   addLintStaged,
   addScripts,
+  platformValidation,
 } from "./utils";
 
 const main = async () => {
@@ -22,6 +23,7 @@ const main = async () => {
   colorLog.green("Adding scripts...");
   console.log("");
   await addScripts(tools, command);
+  await platformValidation();
 
   colorLog.green("Done!");
 };

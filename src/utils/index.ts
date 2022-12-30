@@ -4,3 +4,4 @@ export * from "./makeQuestions";
 export * from "./colorLog";
 export * from "./addScripts";
 export * from "./addLintStaged";
+export * from "./platformValidation";
