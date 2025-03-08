@@ -1,17 +1,18 @@
 import { existsSync } from "fs";
 
 export const packageManager = async () => {
-  const manager = {
-    message: "",
-    command: "",
-  };
+  let manager = "npm install";
 
   if (existsSync("yarn.lock")) {
-    manager.message = "yarn add";
-    manager.command = "yarn";
-  } else {
-    manager.message = "npm install";
-    manager.command = "npm run";
+    manager = "yarn add";
+  }
+
+  if (existsSync("pnpm-lock.yaml")) {
+    manager = "pnpm add";
+  }
+
+  if (existsSync("bun.lockb")) {
+    manager = "bun add";
   }
 
   return manager;

@@ -12,7 +12,7 @@ const main = async () => {
   console.log("");
   const { tools } = await makeQuestions();
 
-  const { message, command } = await packageManager();
+  const message = await packageManager();
   await addLintStaged();
 
   colorLog.green("Installing dependencies...");
@@ -21,7 +21,7 @@ const main = async () => {
 
   colorLog.green("Adding scripts...");
   console.log("");
-  await addScripts(tools, command);
+  await addScripts(tools);
 
   colorLog.green("Done!");
 };
