@@ -1,10 +1,7 @@
 import { existsSync, writeFileSync } from "fs";
 import { exec } from "shelljs";
 
-export const addScripts = async (
-  isRequiredCommitlint: boolean,
-  managerCommand: string,
-) => {
+export const addScripts = async (isRequiredCommitlint: boolean, managerCommand: string) => {
   if (!existsSync(".git")) {
     exec("git init");
   }
@@ -15,9 +12,7 @@ export const addScripts = async (
   exec(`npx husky add .husky/pre-commit "npx --no-install lint-staged"`);
 
   if (isRequiredCommitlint) {
-    exec(
-      'npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"',
-    );
+    exec('npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"');
 
     writeFileSync(
       "commitlint.config.js",
