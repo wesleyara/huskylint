@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn && yarn format && yarn lint
+      - run: yarn && yarn lint
 
   test:
     runs-on: ubuntu-latest

@@ -8,8 +8,6 @@
     "test:run": "vitest run",
     "dev": "ts-node src/index.ts",
     "build": "rimraf lib && tsc --declaration",
-    "format": "prettier --check src",
-    "format:fix": "prettier --write src",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "prepare": "husky install",
