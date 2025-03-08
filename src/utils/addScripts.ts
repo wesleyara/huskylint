@@ -7,10 +7,10 @@ export const addScripts = async (isRequiredCommitlint: boolean) => {
   }
 
   exec(`npx husky init`);
-  exec(`npx husky add .husky/pre-commit "npx --no-install lint-staged"`);
+  exec('echo "npx --no-install lint-staged" > .husky/pre-commit');
 
   if (isRequiredCommitlint) {
-    exec('npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"');
+    exec('echo "npx --no -- commitlint --edit $1" > .husky/commit-msg');
 
     writeFileSync(
       "commitlint.config.js",
