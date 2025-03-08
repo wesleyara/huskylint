@@ -1,10 +1,10 @@
 import {
-  colorLog,
-  makeQuestions,
-  packageManager,
   addDependencies,
   addLintStaged,
   addScripts,
+  colorLog,
+  makeQuestions,
+  packageManager,
   platformValidation,
 } from "./utils";
 

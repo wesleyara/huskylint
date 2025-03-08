@@ -2,25 +2,15 @@ import { exec } from "shelljs";
 import { delay } from "utils-react";
 
 import { IDependencies } from "../@types";
-import {
-  huskyDependencies,
-  lintStagedDependencies,
-  commitlintDependencies,
-} from "./constants";
+import { commitlintDependencies, huskyDependencies, lintStagedDependencies } from "./constants";
 
-export const addDependencies = async (
-  isRequiredCommitlint: boolean,
-  managerMessage: string,
-) => {
+export const addDependencies = async (isRequiredCommitlint: boolean, managerMessage: string) => {
   const dependenciesObject: IDependencies = {
     dependencies: [],
     dev_dependencies: [],
   };
 
-  dependenciesObject.dev_dependencies.push(
-    ...huskyDependencies,
-    ...lintStagedDependencies,
-  );
+  dependenciesObject.dev_dependencies.push(...huskyDependencies, ...lintStagedDependencies);
 
   if (isRequiredCommitlint) {
     dependenciesObject.dev_dependencies.push(...commitlintDependencies);
