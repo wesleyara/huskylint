@@ -1,29 +1,23 @@
-import {
-  addDependencies,
-  addLintStaged,
-  addScripts,
-  colorLog,
-  makeQuestions,
-  packageManager,
-} from "./utils";
+import { colorLog } from "essentials-utils";
+
+import { addDependencies, addLintStaged, addScripts, makeQuestions, packageManager } from "./utils";
 
 const main = async () => {
-  colorLog.green("Welcome to the Huskylint installer!");
+  console.log(colorLog("Welcome to the Huskylint installer!", { color: "green" }));
   console.log("");
   const { tools } = await makeQuestions();
 
   const message = await packageManager();
   await addLintStaged();
 
-  colorLog.green("Installing dependencies...");
-  console.log("");
+  console.log(colorLog("Installing dependencies...", { color: "green" }));
   await addDependencies(tools === "Yes", message);
 
-  colorLog.green("Adding scripts...");
-  console.log("");
+  console.log(colorLog("Adding scripts...", { color: "green" }));
   await addScripts(tools);
+  console.log("");
 
-  colorLog.green("Done!");
+  console.log(colorLog("Done!", { color: "green" }));
 };
 
 main();

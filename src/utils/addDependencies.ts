@@ -1,5 +1,5 @@
 import { execSync } from "child_process";
-import { delay } from "utils-react";
+import { delay } from "essentials-utils";
 
 import { IDependencies } from "../@types";
 import { commitlintDependencies, huskyDependencies, lintStagedDependencies } from "./constants";
@@ -20,5 +20,5 @@ export const addDependencies = async (isRequiredCommitlint: boolean, managerMess
   const addMessage = `${managerMessage} ${dependencies} -D`;
 
   await delay(1000);
-  execSync(addMessage);
+  execSync(addMessage, { stdio: "inherit" });
 };
