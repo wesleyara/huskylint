@@ -1,4 +1,4 @@
-import { exec } from "shelljs";
+import { execSync } from "child_process";
 import { delay } from "utils-react";
 
 import { IDependencies } from "../@types";
@@ -20,5 +20,5 @@ export const addDependencies = async (isRequiredCommitlint: boolean, managerMess
   const addMessage = `${managerMessage} ${dependencies} -D`;
 
   await delay(1000);
-  exec(addMessage);
+  execSync(addMessage);
 };
