@@ -50,6 +50,7 @@ export default [
       "perfectionist/sort-named-imports": "error",
       "perfectionist/sort-union-types": "error",
       "@typescript-eslint/no-require-imports": "off",
+      "no-useless-escape": "off",
     },
   },
 ];
